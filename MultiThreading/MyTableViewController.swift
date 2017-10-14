@@ -12,7 +12,6 @@ class MyTableViewController: UITableViewController {
 
     
     var nameArr : [String] = []
-    var imgArr : [UIImage] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,24 +19,26 @@ class MyTableViewController: UITableViewController {
         tableView.dataSource = self
         //https://api.myjson.com/bins/vi56v
         //http://www.androidbegin.com/tutorial/jsonparsetutorial.txt
-        guard let url = URL(string: "http://microblogging.wingnity.com/JSONParsingTutorial/jsonActors") else {return}
+        //https://api.androidhive.info/contacts/
+        guard let url = URL(string: "https://api.androidhive.info/contacts/") else {return}
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if (error == nil && data != nil){
                 guard let data = data else {return}
                 
+//                do{
+//                    let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+//                    print(json)
+//                }catch{
+//                    print(error.localizedDescription)
+//                }
+                
                 do{
-                    let actors = try JSONDecoder().decode(Actors.self, from: data)
+                    let contacts = try JSONDecoder().decode(Contacts.self, from: data)
                     OperationQueue.main.addOperation {
-                        var tempImg : UIImage?
-                        for each in actors.actors{
-                            print(each.name)
-                            self.nameArr.append(each.name)
-                            guard let url = URL(string: each.image) else {return}
-                            guard let data = try? Data(contentsOf: url) else {return}
-                            tempImg = UIImage(data: data)
-                            self.imgArr.append(tempImg!)
+                        for each in contacts.contacts{
+                            print(each.phone.home)
                         }
-                        self.tableView.reloadData()
+//                        self.tableView.reloadData()
                     }
 
                 }catch{
@@ -67,7 +68,6 @@ class MyTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Reuse Identifier", for: indexPath) as? TableViewCell else{return UITableViewCell() }
         cell.myLabel.text = nameArr[indexPath.row]
-        cell.imageView?.image = imgArr[indexPath.row]
         print(cell.myLabel.text!)
         
         return cell

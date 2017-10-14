@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F0DD58A1F91C42200560024 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0DD5891F91C42200560024 /* DataService.swift */; };
 		4F2CD3FF1F8FCB33001F1308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CD3FE1F8FCB33001F1308 /* AppDelegate.swift */; };
 		4F2CD4041F8FCB34001F1308 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F2CD4021F8FCB34001F1308 /* Main.storyboard */; };
 		4F2CD4061F8FCB35001F1308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F2CD4051F8FCB35001F1308 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F0DD5891F91C42200560024 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		4F2CD3FB1F8FCB32001F1308 /* MultiThreading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiThreading.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F2CD3FE1F8FCB33001F1308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F2CD4031F8FCB34001F1308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,10 +104,11 @@
 				4F2CD3FE1F8FCB33001F1308 /* AppDelegate.swift */,
 				4F2CD42C1F8FD46B001F1308 /* TableViewCell.swift */,
 				4FF759E01F906E03004D0DCA /* MyTableViewController.swift */,
+				4F0DD5891F91C42200560024 /* DataService.swift */,
+				4F2CD40A1F8FCB36001F1308 /* Info.plist */,
 				4F2CD4021F8FCB34001F1308 /* Main.storyboard */,
 				4F2CD4051F8FCB35001F1308 /* Assets.xcassets */,
 				4F2CD4071F8FCB36001F1308 /* LaunchScreen.storyboard */,
-				4F2CD40A1F8FCB36001F1308 /* Info.plist */,
 			);
 			path = MultiThreading;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				4F2CD42D1F8FD46B001F1308 /* TableViewCell.swift in Sources */,
 				4FF759E11F906E03004D0DCA /* MyTableViewController.swift in Sources */,
 				4F2CD3FF1F8FCB33001F1308 /* AppDelegate.swift in Sources */,
+				4F0DD58A1F91C42200560024 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
